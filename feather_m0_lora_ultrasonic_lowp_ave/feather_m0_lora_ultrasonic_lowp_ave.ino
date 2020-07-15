@@ -25,7 +25,7 @@
 #define POWERSWITCH 6
 #define INTERVALSWITCH 10
 
-const unsigned SHORT_INTERVAL = 10; // 10 second interval
+const unsigned SHORT_INTERVAL = 5; // 10 second interval
 const unsigned LONG_INTERVAL = 300; // 5 minute interval
 
 int TX_INTERVAL = LONG_INTERVAL; // default short interval
@@ -179,9 +179,9 @@ for (int s=0;s<numSamples;s++) {
   
 sensorValue += float(analogRead(A0));
 delay(sampleInterval*1000);
-Serial.println('sample');
 }
 sensorValue=sensorValue/float(numSamples);
+Serial.println(sensorValue);
 
 //float voltage = sensorValue*3.3/4096;
 //float distance = voltage/.002*2; // in cm
